@@ -1,6 +1,6 @@
 <template>
   <div>
-    <span>{{ randomNumber }}</span>
+    <span>{{ this.randomNumber }}</span>
     <button @click="getRandomNumber">Generate Random Number</button>
   </div>
 </template>
@@ -10,21 +10,23 @@ export default {
   props: {
     min: {
       type: Number,
-      default: 1
+      default: 1,
     },
     max: {
       type: Number,
-      default: 10
-    }
+      default: 10,
+    },
   },
   data() {
     return {
-      randomNumber: 0
-    }
+      randomNumber: 0,
+    };
   },
   methods: {
     getRandomNumber() {
-      this.randomNumber = Math.floor(Math.random() * (this.max - this.min + 1) ) + this.min;
-    }
-  }
-}
+      this.randomNumber =
+        Math.floor(Math.random() * (this.max - this.min + 1)) + this.min;
+    },
+  },
+};
+</script>
