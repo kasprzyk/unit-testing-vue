@@ -7,9 +7,10 @@ describe('AppHeader', () => {
     expect(wrapper.find('button').isVisible()).toBe(false);
   });
 
-  test('if logged in, show logout button', () => {
+  test('if logged in, show logout button', async () => {
     const wrapper = mount(AppHeader);
     wrapper.setData({ loggedIn: true }); // setting our data value
+    await wrapper.vm.$nextTick();
     expect(wrapper.find('button').isVisible()).toBe(true);
   });
 });
